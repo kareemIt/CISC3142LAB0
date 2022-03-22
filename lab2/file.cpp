@@ -53,26 +53,26 @@ int main() {
     int mode;
 
     //displays options for the users and takes in user input
-    cout << "Input a number into the following";
-    cout << "Calculator options:\n Addtion: 1  \n Subtractions: 2 \n Multiply: 3 \n Divide: 4 \n Square Root: 5 \n Exponent: 6 \n";
+    cout << "Input a number into the following\n";
+    cout << "Calculator options:\n Addtion: 1  \n Subtraction: 2 \n Multiply: 3 \n Divide: 4 \n Square Root: 5 \n Exponent: 6 \n";
     cin >> mode; 
     cout << "Input your first number \n";
     cin >> firstInput;
 
-    // if(isNumber(firstInput)){
-    //   cout << "Your first input is not a number";
-    //   return -1;
-    // }
+    if(cin.fail()){
+      cout << "Your first input is not a number";
+      return -1;
+    }
 
     if(mode != 5) {
     cout << "Input your Second number \n";
     cin >> secondInput;
     }
 
-    // if(isNumber(secondInput)){
-    //   cout << "Your second input is not a number";
-    //   return -1;
-    // }
+    if(cin.fail()){
+      cout << "Your second input is not a number";
+      return -1;
+    }
     
     Calculator answer = Calculator(firstInput,secondInput,mode);
 
