@@ -1,6 +1,10 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
 
 struct Calculator {
   double firstNum;
@@ -49,16 +53,30 @@ int main() {
     int mode;
 
     //displays options for the users and takes in user input
-    cout << "Calculator options:\n Addtion: 1  \n Subtractions: 2 \n Multiply: 3 \n Divide: 4 \n Square Root: 5 \n Exponent: 6 ";
+    cout << "Input a number into the following";
+    cout << "Calculator options:\n Addtion: 1  \n Subtractions: 2 \n Multiply: 3 \n Divide: 4 \n Square Root: 5 \n Exponent: 6 \n";
     cin >> mode; 
     cout << "Input your first number \n";
     cin >> firstInput;
+
+    // if(isNumber(firstInput)){
+    //   cout << "Your first input is not a number";
+    //   return -1;
+    // }
+
     if(mode != 5) {
-    cout << "Input your Second num \n";
+    cout << "Input your Second number \n";
     cin >> secondInput;
     }
+
+    // if(isNumber(secondInput)){
+    //   cout << "Your second input is not a number";
+    //   return -1;
+    // }
+    
     Calculator answer = Calculator(firstInput,secondInput,mode);
+
     //displays the answer for the user
-    cout << answer.calculate(mode);
+    cout <<"Your final answer: " <<answer.calculate(mode);
     return 0;
 }
