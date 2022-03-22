@@ -56,6 +56,10 @@ int main() {
     cout << "Input a number into the following\n";
     cout << "Calculator options:\n Addtion: 1  \n Subtraction: 2 \n Multiply: 3 \n Divide: 4 \n Square Root: 5 \n Exponent: 6 \n";
     cin >> mode; 
+    if(cin.fail()){
+      cout << "Your inputted value is not a number";
+      return -1;
+    }
     cout << "Input your first number \n";
     cin >> firstInput;
 
