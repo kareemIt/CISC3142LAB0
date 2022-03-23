@@ -2,15 +2,24 @@
 ## lab2
 
 ## Build instructions
-First we clone the repository 
+1.Clone the repository 
+
 git clone https://github.com/kareemIt/CISC3142LAB0
-Then we can move into the repository
+
+2.Then we can move into the repository
+
 cd CISC3142LAB0
-After we can move into lab2
+
+3.After we can move into lab2
+
 cd lab2
-Call the makefile
+
+4.Call the makefile
+
 make lab2
-Finally run the complied file
+
+5.Finally run the complied file
+
 ./fileout
 
 ### Test Cases
