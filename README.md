@@ -40,7 +40,7 @@ Finally run the complied file
 
 6. sqrt(4)=2
 
-![image](https://user-images.githubusercontent.com/49353198/159611970-7dc4f125-078a-4062-9287-0a67719bdfac.png)
+![image](https://user-images.githubusercontent.com/49353198/159614814-8ac6681c-54a0-4102-8d51-9b1c3c66318b.png)
 
 
 
