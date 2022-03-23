@@ -7,27 +7,35 @@ Simple overview of use/purpose.
 
 An in-depth paragraph about your project and overview of use.
 
-## Getting Started
+## Build instructions
+First we clone the repository 
+git clone https://github.com/kareemIt/CISC3142LAB0
+Then we can move into the repository
+cd CISC3142LAB0
+After we can move into lab2
+cd lab2
+Call the makefile
+make lab2
+Finally run the complied file
+./fileout
 
-### Dependencies
+### Test Cases
+1. 1+1=2
+![image](https://user-images.githubusercontent.com/49353198/159611582-6b5b9fdb-be97-4c71-a825-0da15e5ccf3e.png)
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+2. 2-2=0
+3. 3*1=3
+4. 4/2=2
+5. 5^2=25
+6. sqrt(4)=2
 
-### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+### Evidence of articulating the problem
+In this problem I have to make a calculator that has the functions addition,subtraction,division,multiplication,square root,and exponent.
+### Evidence of problem-solving technique
 
-### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
+## Evidence of articulating the solution
 
 Any advise for common problems or issues.
 ```
