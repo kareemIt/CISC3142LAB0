@@ -1,9 +1,5 @@
 # CISC3142LAB0
-# lab2
-
-## Description
-
-An in-depth paragraph about your project and overview of use.
+## lab2
 
 ## Build instructions
 First we clone the repository 
@@ -48,9 +44,7 @@ Finally run the complied file
 In this problem I have to make a calculator that has the functions addition,subtraction,division,multiplication,square root,and exponent.
 
 ### Evidence of problem-solving technique
-firstNum
-secondNum
-userMode
+In main there is three variables firstInput, secondInput,mode, then the user is prompted with the choice of operation they want to do so then mode is updated but if the input they put in isnt a number then it stops the program, a same process then happens to firstInput and secondInput. After this values get updated the Calculator Struc is called which takes in firstInput,secondInput,mode. Inside of the Calculator struc there are three local values called firstNum,secondNum,userMode which get updated by firstInput,secondInput,mode.Then a switch case gets called taking in userMode then depending on the number userMode is, is what operation ends up happening.After that it returns a value that has gone through the case then gets printed out for the user to see
 
 
 ## Evidence of articulating the solution
@@ -60,8 +54,8 @@ In this problem I used enums to represent the operations in the calculator, such
     Multiply = 3,
     Divide = 4,
     Sqrt = 5,
-    Exponent = 6
+    Exponent = 6 
 the point of this is when the user inputs what mode they want to use, the userinput is compared to the enum values and then excutes the command depending on the input.
-This is apart of the struc Calculator, in this struc we have first number,second number, user mode along with I have a constuctionor that takes in userinput and updates first number, second number, user mode. Then in the struc there is a switch case that checks the usermode with the enums operations and does the respective operation.
+This is apart of the struc Calculator, in this struc we have first number,second number, user mode along with I have a constructor that takes in userinput and updates first number, second number, user mode. Then in the struc there is a switch case that checks the usermode with the enums operations and does the respective operation.
 
 
