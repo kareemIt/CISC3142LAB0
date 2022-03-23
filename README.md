@@ -50,7 +50,7 @@ make lab2
 
 
 ### Evidence of articulating the problem
-In this problem I have to make a calculator that has the functions addition,subtraction,division,multiplication,square root,and exponent.
+In this problem I have to make a calculator that has the functions addition,subtraction,division,multiplication,square root,and exponent.So what I am planning on doing is be able to take in user input first then setup a switch case statement that will be dependented on the type of operation a person would like to do.I will use enums to keep track of the operations that are avabile to the person.Also keep in mind edge cases where people may put any but a number.Finally make sure that the instructions for a person are understandable to follow.This could also be done by making the calcultor simplier in desgin so the user can use it without confusion.
 
 ### Evidence of problem-solving technique
 In main there is three variables firstInput, secondInput,mode, then the user is prompted with the choice of operation they want to do so then mode is updated but if the input they put in isnt a number then it stops the program, a same process then happens to firstInput and secondInput. After this values get updated the Calculator Struc is called which takes in firstInput,secondInput,mode. Inside of the Calculator struc there are three local values called firstNum,secondNum,userMode which get updated by firstInput,secondInput,mode.Then a switch case gets called taking in userMode then depending on the number userMode is, is what operation ends up happening.After that it returns a value that has gone through the case then gets printed out for the user to see
