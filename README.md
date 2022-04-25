@@ -68,3 +68,35 @@ the point of this is when the user inputs what mode they want to use, the userin
 This is apart of the struc Calculator, in this struc we have first number,second number, user mode along with I have a constructor that takes in userinput and updates first number, second number, user mode. Then in the struc there is a switch case that checks the usermode with the enums operations and does the respective operation.
 
 
+## lab3
+
+### Build instructions
+1.Clone the repository 
+
+git clone https://github.com/kareemIt/CISC3142LAB0
+
+2.Then we can move into the repository
+
+cd CISC3142LAB0
+
+3.After we can move into lab3
+
+cd lab3
+
+4.Call the makefile
+
+make lab3
+
+5.Finally run the complied file
+
+./fileout
+
+### Evidence of articulating the problem
+In this problem, I have to parse 3 CSV files and make files that give out information about students, instructors, courses, and pass rates. To do this first I need to parse through the CSV files and take note of the courses, students, instructors, and terms. Then I have to make four structs to keep track of the information. Then assign the right values to a map then later run an algorithm to get the pass rate for the students/instructors, then withdrawal rates, then both for the spring and fall semester. Finally, after the information is formatted properly I can print them out in separate files to show the user the rates of each situation. I will have to keep in mind that I need to parse the CSV files carefully if I miss up gathering the information I can mess up the whole problem.
+
+### Evidence of problem-solving technique
+First I need to get the CSV files so I need to use .gitmodules and use the link provided so I can call on the CSV files. Second I need to make structs for courses, students, instructors, and terms. Third, I can start going through the CSV files and start adding them to an unordered map to help me easily call and use the information I got for later. Fourth I use ratingForInstructor, rating for the course,ratingForInstructor,ratingForTerm what this does is parse through the unordered map I used to help me get the desired information I need such as how many students took a class, and what percentage of them passed the class. Finally, I call on my write.CPP makes files corresponding to what information is needed such as pass rate per instructor, withdraw rate per instructor, and more. When this is done the user can see the statistics within each of the files.
+
+
+## Evidence of articulating the solution
+In this problem, I use a combination of structs, classes, unordered maps, maps, vectors, file reading, and writing. The use of the structs and classes is so I can use the getters so I can get certain information from a struct to make it easier to use what information I need to answer the problem. The use of unordered maps, maps, and vectors is so I can keep my information stored in a data structure so I can have easy access to it when I use it later to find the data I need to answer the question. I use file reading and writing is so that I can read the CSV files so I can get the information and then I can populate the unordered maps, maps, vectors, and writing so then I can when I get the data needed to answer the question  I can print them out in a file where the users can easily access the files and read the information. When these elements are used together I can read the CSV files then put them in a map, later using structs to access the information, after receiving the correct information I can write the information to a file and display it to the user.
