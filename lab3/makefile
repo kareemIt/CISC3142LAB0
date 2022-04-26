@@ -5,4 +5,4 @@ lab3:
 	g++ Analysis.cpp -c -std=c++14
 	g++ Read.cpp -c -std=c++14
 	g++ Write.cpp -c -std=c++14 
-	g++ main.cpp -o main.exe -std=c++14
+	g++ main.cpp -o ./work -std=c++14

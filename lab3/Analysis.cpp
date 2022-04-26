@@ -38,6 +38,7 @@ map<string, vector<double>> ratingForCourse(college* brookylnCollege, bool (*cri
 
     unordered_map<string, section*>* courses = brookylnCollege->getCourses();
     unordered_map<string, student*>* students = brookylnCollege->getStudents();
+    cout << "1";
 
 
     for(const auto& c : *courses) {
@@ -65,6 +66,7 @@ map<string, vector<double>> ratingForCourse(college* brookylnCollege, bool (*cri
     for (string s : courseNumbers) {
         ratePerCourse[s].push_back(ratePerCourse[s][0] / ratePerCourse[s][1]);
     }
+    cout << "7";
 
     return ratePerCourse;
 }
@@ -96,6 +98,7 @@ map<string, vector<double>> ratingForInstructor(college* brookylnCollege, bool (
         ratePerInstructor[i.first] = passRate;
         studentTotal += total;
     }
+    cout << "5";
     return ratePerInstructor;
 }
 map<string, vector<double>> ratingForTerm (college* brookylnCollege, bool (*criterion)(string)) {
@@ -136,6 +139,7 @@ map<string, vector<double>> ratingForTerm (college* brookylnCollege, bool (*crit
     passRatePerTerm["Fall"][1] = studentFallTotal;
     passRatePerTerm["Fall"][2] = studentAttendingFall/studentFallTotal;
 
+    cout << "6";
     return passRatePerTerm;
 }
 

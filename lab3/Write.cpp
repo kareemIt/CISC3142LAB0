@@ -8,6 +8,9 @@
 void printWithdrawRateInstructor(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateInstructor.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -16,6 +19,9 @@ void printWithdrawRateInstructor(map<string,vector<double>>* m){
 void printWithdrawRateCourse(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateCourse.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -24,6 +30,9 @@ void printWithdrawRateCourse(map<string,vector<double>>* m){
 void printWithdrawRateTerm(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateTerm.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -32,6 +41,9 @@ void printWithdrawRateTerm(map<string,vector<double>>* m){
 void printWithdrawRateSpring(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateSpring.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -40,16 +52,18 @@ void printWithdrawRateSpring(map<string,vector<double>>* m){
 void printWithdrawRateFall(map<string,vector<double>>* m){
     ofstream file;
     file.open("WithdrawRateFall.txt");
-    for(const auto& terms:*m){
-        file << terms.first << endl;
+    for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
-
     file.close();
 
 }
 void printPassRateInstructor(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateInstructor.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -57,6 +71,9 @@ void printPassRateInstructor(map<string,vector<double>>* m){
 void printPassRateCourse(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateCourse.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -64,6 +81,9 @@ void printPassRateCourse(map<string,vector<double>>* m){
 void printPassRateTerm(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateTerm.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -71,6 +91,9 @@ void printPassRateTerm(map<string,vector<double>>* m){
 void printPassRateSpring(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateSpring.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -78,6 +101,9 @@ void printPassRateSpring(map<string,vector<double>>* m){
 void printPassRateFall(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateFall.txt");
+     for(const auto& t:*m){
+        file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
+    }
 
     file.close();
 
@@ -85,7 +111,8 @@ void printPassRateFall(map<string,vector<double>>* m){
 
 
 
-int write(){
+void write(){
+    cout << "3";
     college brooklynCollege = read();
     
     map<string, vector<double>> passRateInstructor = ratingForInstructor(&brooklynCollege, &passed);
@@ -94,11 +121,13 @@ int write(){
     map<string, vector<double>> passRateSpring = ratingForCourse(&brooklynCollege, &passed);
     map<string, vector<double>> passRateFall = ratingForTerm(&brooklynCollege, &passed);
 
+    cout << "4";
     printPassRateInstructor(&passRateInstructor);
     printPassRateCourse(&passRateCourse);
     printPassRateTerm(&passRateTerm);
     printPassRateSpring(&passRateSpring);
     printPassRateFall(&passRateFall);
+
 
     map<string, vector<double>> withdrawRateInstructor = ratingForInstructor(&brooklynCollege, &withdrew);
     map<string, vector<double>> withdrawRateCourse = ratingForCourse(&brooklynCollege, &withdrew);
@@ -111,5 +140,7 @@ int write(){
     printWithdrawRateTerm(&withdrawRateTerm);
     printWithdrawRateSpring(&withdrawRateSpring);
     printWithdrawRateFall(&withdrawRateFall);
-    return 0;
+
+
+
 }
