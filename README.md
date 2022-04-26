@@ -20,7 +20,20 @@ make lab3
 
 5.Finally run the complied file
 
-./fileout
+./work
+
+### Outputfile names
+After you run the code the the names for the passing requirments are called  
+
+passRateCourse.txt  
+passRateTerm.txt  
+passRateInstructor.txt  
+ 
+the names for the withdrawal names they are  
+ 
+withdrawRateTerm.txt  
+withdrawRateInstructor.txt  
+withdrawRateCourse.txt  
 
 ### Evidence of articulating the problem
 In this problem, I have to parse 3 CSV files and make files that give out information about students, instructors, courses, and pass rates. To do this first I need to parse through the CSV files and take note of the courses, students, instructors, and terms. Then I have to make four structs to keep track of the information. Then assign the right values to a map then later run an algorithm to get the pass rate for the students/instructors, then withdrawal rates, then both for the spring and fall semester. Finally, after the information is formatted properly I can print them out in separate files to show the user the rates of each situation. I will have to keep in mind that I need to parse the CSV files carefully if I miss up gathering the information I can mess up the whole problem.
