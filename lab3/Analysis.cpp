@@ -7,26 +7,68 @@
 
 using namespace std;
 
-
+//The requirments for a passing grade
 bool passed(string grade) {
     unordered_set<string> passing = {"A+", "A", "A-", "B+", "B", "B-", "C+", "C", "CR", "C-", "D+", "D", "D-", "P"};
     return passing.count(grade);
 }
+//The requirments for withdrawals
 bool withdrew(string grade) {
     unordered_set<string> withdrawals = {"W", "WN", "WD", "WU"};
     return withdrawals.count(grade);
 }
+//The the courseId for spring classes
 bool spring(string grade) {
     unordered_set<string> spring = {"T04","T05","T07","T08","T09","T11"};
     return spring.count(grade);
 }
+//The the courseId for fall classes
 bool fall(string grade) {
     unordered_set<string> fall = {" T12","T13","T15","T16","T17","T19"};
     return fall.count(grade);
 }
 
 
+map<string, vector<double>> ratingForTerm (college* brookylnCollege, bool (*criterion)(string)) {
+    double studentAttentendingSpring = 0;
+    double studentSpringTotal = 0;
+    double studentAttendingFall = 0;
+    double studentFallTotal = 0;
+    double studentTotal = 0;
+    vector<double> passRate;
+    map<string, vector<double>> passRatePerTerm = {
+        {"Spring", {0, 0, 0}}, {"Fall", {0, 0, 0}}
+    };
+    
+    unordered_map<string, section*>* courses = brookylnCollege->getCourses();
+    unordered_map<string, student*>* students = brookylnCollege->getStudents();
+    unordered_map<string, term*>* terms = brookylnCollege->getTerms();
+    
+    for(const auto& i : *terms) {
+        passRate = {};
+        for (string c : i.second->courses) {
+            for(string s : courses->at(c)->students) {
+               if (fall(i.second->termId)) {
+                    studentAttendingFall += criterion(students->at(s)->classes[c]);
+                    studentFallTotal++;
+                } else if(spring(i.second->termId)) {
+                    studentAttentendingSpring += criterion(students->at(s)->classes[c]);
+                    studentSpringTotal++;
+                }
+                studentTotal++;
+            }
+        }
+    }
+    passRatePerTerm["Spring"][0] = studentAttentendingSpring;
+    passRatePerTerm["Spring"][1] = studentSpringTotal;
+    passRatePerTerm["Spring"][2] = studentAttentendingSpring/studentSpringTotal;
 
+    passRatePerTerm["Fall"][0] = studentAttendingFall;
+    passRatePerTerm["Fall"][1] = studentFallTotal;
+    passRatePerTerm["Fall"][2] = studentAttendingFall/studentFallTotal;
+
+    return passRatePerTerm;
+}
 
 map<string, vector<double>> ratingForCourse(college* brookylnCollege, bool (*criterion)(string)) {
     double hit;
@@ -98,44 +140,5 @@ map<string, vector<double>> ratingForInstructor(college* brookylnCollege, bool (
     }
     return ratePerInstructor;
 }
-map<string, vector<double>> ratingForTerm (college* brookylnCollege, bool (*criterion)(string)) {
-    double studentAttentendingSpring = 0;
-    double studentSpringTotal = 0;
-    double studentAttendingFall = 0;
-    double studentFallTotal = 0;
-    double studentTotal = 0;
-    vector<double> passRate;
-    map<string, vector<double>> passRatePerTerm = {
-        {"Spring", {0, 0, 0}}, {"Fall", {0, 0, 0}}
-    };
-    
-    unordered_map<string, section*>* courses = brookylnCollege->getCourses();
-    unordered_map<string, student*>* students = brookylnCollege->getStudents();
-    unordered_map<string, term*>* terms = brookylnCollege->getTerms();
-    
-    for(const auto& i : *terms) {
-        passRate = {};
-        for (string c : i.second->courses) {
-            for(string s : courses->at(c)->students) {
-               if (fall(i.second->termId)) {
-                    studentAttendingFall += criterion(students->at(s)->classes[c]);
-                    studentFallTotal++;
-                } else if(spring(i.second->termId)) {
-                    studentAttentendingSpring += criterion(students->at(s)->classes[c]);
-                    studentSpringTotal++;
-                }
-                studentTotal++;
-            }
-        }
-    }
-    passRatePerTerm["Spring"][0] = studentAttentendingSpring;
-    passRatePerTerm["Spring"][1] = studentSpringTotal;
-    passRatePerTerm["Spring"][2] = studentAttentendingSpring/studentSpringTotal;
 
-    passRatePerTerm["Fall"][0] = studentAttendingFall;
-    passRatePerTerm["Fall"][1] = studentFallTotal;
-    passRatePerTerm["Fall"][2] = studentAttendingFall/studentFallTotal;
-
-    return passRatePerTerm;
-}
 

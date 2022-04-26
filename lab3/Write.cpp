@@ -78,7 +78,8 @@ void printPassRateTerm(map<string,vector<double>>* m){
 
 void write(){
     college brooklynCollege = read();
-    
+
+    //this writes all the information about passing 
     map<string, vector<double>> passRateInstructor = ratingForInstructor(&brooklynCollege, &passed);
     map<string, vector<double>> passRateCourse = ratingForCourse(&brooklynCollege, &passed);
     map<string, vector<double>> passRateTerm = ratingForTerm(&brooklynCollege, &passed);
@@ -87,7 +88,7 @@ void write(){
     printPassRateCourse(&passRateCourse);
     printPassRateTerm(&passRateTerm);
 
-
+    //this writes all the information about withdraw
     map<string, vector<double>> withdrawRateInstructor = ratingForInstructor(&brooklynCollege, &withdrew);
     map<string, vector<double>> withdrawRateCourse = ratingForCourse(&brooklynCollege, &withdrew);
     map<string, vector<double>> withdrawRateTerm = ratingForTerm(&brooklynCollege, &withdrew);

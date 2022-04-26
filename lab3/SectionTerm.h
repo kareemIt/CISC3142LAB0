@@ -5,6 +5,7 @@
 using namespace std;
 
 struct term {
+    //struct to keep track of the termId,courses. Also adds course
     string termId;
     unordered_set<string> courses;
 
@@ -22,19 +23,20 @@ struct term {
 };
 
 struct section {
+    string term;
     string classId; 
     string courseNumber; 
     string sectionNumber; 
     string instructorId; 
-    string term; 
+
     vector<string> students; 
 
     section(string classId, string courseNumber, string sectionNumber, string instructorId, string term) {
+        this->term = term;
         this->classId = classId;
+        this->instructorId = instructorId;
         this->courseNumber = courseNumber;
         this->sectionNumber = sectionNumber;
-        this->instructorId = instructorId;
-        this->term = term;
     }
 
     void addStudent(string emplid) {

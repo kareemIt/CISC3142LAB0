@@ -13,9 +13,12 @@ using namespace std;
 college read() {
     ifstream inStream;
 
+    //opens the CSV files of 1115,3115,3130
+
     vector <string> files = {"1115.csv", "3115.csv", "3130.csv"};
     college brooklynCollege;
 
+    //parses each of the files one at at time
     for (string file : files) {
         inStream.open("../datas/" + file);
         if (inStream.good()) {    
@@ -29,10 +32,6 @@ college read() {
                 header_length++;
             }
 
-            if (header_length != 6) {
-                throw runtime_error ("One or more of the .csv files is incorrectly formatted (missing columns).");
-            }
-
             string lines;
             string emplId;
             string courseNumber;
@@ -42,6 +41,7 @@ college read() {
             string grade;
 
             while (inStream >> lines) {
+                //keeps track of emplId,courseNumber,instructorId,termId,sectionCode,and grade 
                 stringstream line (lines);
                 getline(line, emplId, ',');
                 getline(line, courseNumber, ',');
