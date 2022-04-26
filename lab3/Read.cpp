@@ -20,7 +20,7 @@ college read() {
     college brooklynCollege;
 
     for (string file : files) {
-        in_stream.open(file);
+        in_stream.open("../datas/" + file);
         if (in_stream.good()) {    
             string header;
             in_stream >> header;
