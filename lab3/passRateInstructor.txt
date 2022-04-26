@@ -1,4 +1,4 @@
-Instructor, students taking instructor, total Students, percentage of students passI01: 164,265,0.618868
+Instructor, Students taking instructor, Total Students, Percentage of students passI01: 164,265,0.618868
 I02: 83,150,0.553333
 I03: 36,40,0.9
 I04: 37,88,0.420455

@@ -1,2 +1,2 @@
-Term, students taking course, total Students, percentage of students passFall: 1599,2344,0.682167
+Term, Students taking course, Total Students, Percentage of students passFall: 1599,2344,0.682167
 Spring: 1384,2190,0.631963

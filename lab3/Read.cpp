@@ -10,20 +10,17 @@
 
 using namespace std;
 
-
-
-
 college read() {
-    ifstream in_stream;
+    ifstream inStream;
 
     vector <string> files = {"1115.csv", "3115.csv", "3130.csv"};
     college brooklynCollege;
 
     for (string file : files) {
-        in_stream.open("../datas/" + file);
-        if (in_stream.good()) {    
+        inStream.open("../datas/" + file);
+        if (inStream.good()) {    
             string header;
-            in_stream >> header;
+            inStream >> header;
             stringstream head (header);
             string column;
 
@@ -44,7 +41,7 @@ college read() {
             string sectionCode;
             string grade;
 
-            while (in_stream >> lines) {
+            while (inStream >> lines) {
                 stringstream line (lines);
                 getline(line, emplId, ',');
                 getline(line, courseNumber, ',');
@@ -54,27 +51,27 @@ college read() {
                 getline(line, grade);
 
                 string classId = termId + '.' + courseNumber + '.' + sectionCode;
-                section* sect = brooklynCollege.getSection(classId);
-                term* t = brooklynCollege.getTerm(termId);
-                if(!sect) {
-                    sect = new section (classId, courseNumber, sectionCode, instructorId, termId);
-                    brooklynCollege.scheduleCourse(classId, sect);
+                section* currentSection = brooklynCollege.getSection(classId);
+                term* currentTerm = brooklynCollege.getTerm(termId);
+                if(!currentSection) {
+                    currentSection = new section (classId, courseNumber, sectionCode, instructorId, termId);
+                    brooklynCollege.scheduleCourse(classId, currentSection);
                 }
 
-                if(!t) {
-                    t = new term(termId, classId);
-                    brooklynCollege.scheduleTerm(termId, t);
+                if(!currentTerm) {
+                    currentTerm = new term(termId, classId);
+                    brooklynCollege.scheduleTerm(termId, currentTerm);
                 }
                 
             
-                sect->addStudent(emplId);
-                t->addCourse(classId);
+                currentSection->addStudent(emplId);
+                currentTerm->addCourse(classId);
             
                 brooklynCollege.enrollStudent(emplId, classId, grade);
                 brooklynCollege.assignInstructor(instructorId, classId);
             }
         }
-        in_stream.close();
+        inStream.close();
     }
 
     return brooklynCollege;
