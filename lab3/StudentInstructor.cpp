@@ -5,6 +5,7 @@
 using namespace std;
 
 struct instructor {
+    //struct to keep track of the instructor's instructorId,classes. adds courses to instructor
     string instructorId;
     unordered_set<string> classes;  
 
@@ -20,6 +21,7 @@ struct instructor {
 
 
 struct student { 
+    //struct to keep track of student's emplId,courses,and grades. Also adds courses to student
     string emplId;
     unordered_map<string, string> classes; 
 

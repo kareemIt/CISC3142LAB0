@@ -2,7 +2,7 @@
 
 
 int main() {
-     cout << "2";
+     //calls the write function to make the CSV files
      write();
      return 0;
 }

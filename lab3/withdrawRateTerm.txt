@@ -1,0 +1,3 @@
+Term, Students taking course, Total Students, Percentage of students withdrawal 
+Fall: 475,2344,0.202645
+Spring: 431,2190,0.196804

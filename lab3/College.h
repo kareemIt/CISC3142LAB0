@@ -6,6 +6,7 @@
 
 
 class college {
+    //I use an unordered map to keep track of students,courses,instrucotors,and terms.
     unordered_map<string, student*> students;
     unordered_map<string, section*> courses;
     unordered_map<string, instructor*> instructors;
@@ -20,8 +21,8 @@ class college {
     term* getTerm(string termId);
 
     void enrollStudent(string emplId, string course, string grade);
-    void assignInstructor(string instructorId, string course);
     void scheduleCourse(string course, section* currentSection);
+    void assignInstructor(string instructorId, string course);
     void scheduleTerm(string termId, term* currentTerm);
 
     unordered_map<string, student*>* getStudents();

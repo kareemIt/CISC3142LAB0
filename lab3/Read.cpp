@@ -10,30 +10,26 @@
 
 using namespace std;
 
-
-
-
 college read() {
-    ifstream in_stream;
+    ifstream inStream;
+
+    //opens the CSV files of 1115,3115,3130
 
     vector <string> files = {"1115.csv", "3115.csv", "3130.csv"};
     college brooklynCollege;
 
+    //parses each of the files one at at time
     for (string file : files) {
-        in_stream.open(file);
-        if (in_stream.good()) {    
+        inStream.open("../datas/" + file);
+        if (inStream.good()) {    
             string header;
-            in_stream >> header;
+            inStream >> header;
             stringstream head (header);
             string column;
 
             int header_length = 0;
             while (getline(head, column, ',')) {
                 header_length++;
-            }
-
-            if (header_length != 6) {
-                throw runtime_error ("One or more of the .csv files is incorrectly formatted (missing columns).");
             }
 
             string lines;
@@ -44,7 +40,8 @@ college read() {
             string sectionCode;
             string grade;
 
-            while (in_stream >> lines) {
+            while (inStream >> lines) {
+                //keeps track of emplId,courseNumber,instructorId,termId,sectionCode,and grade 
                 stringstream line (lines);
                 getline(line, emplId, ',');
                 getline(line, courseNumber, ',');
@@ -54,27 +51,27 @@ college read() {
                 getline(line, grade);
 
                 string classId = termId + '.' + courseNumber + '.' + sectionCode;
-                section* sect = brooklynCollege.getSection(classId);
-                term* t = brooklynCollege.getTerm(termId);
-                if(!sect) {
-                    sect = new section (classId, courseNumber, sectionCode, instructorId, termId);
-                    brooklynCollege.scheduleCourse(classId, sect);
+                section* currentSection = brooklynCollege.getSection(classId);
+                term* currentTerm = brooklynCollege.getTerm(termId);
+                if(!currentSection) {
+                    currentSection = new section (classId, courseNumber, sectionCode, instructorId, termId);
+                    brooklynCollege.scheduleCourse(classId, currentSection);
                 }
 
-                if(!t) {
-                    t = new term(termId, classId);
-                    brooklynCollege.scheduleTerm(termId, t);
+                if(!currentTerm) {
+                    currentTerm = new term(termId, classId);
+                    brooklynCollege.scheduleTerm(termId, currentTerm);
                 }
                 
             
-                sect->addStudent(emplId);
-                t->addCourse(classId);
+                currentSection->addStudent(emplId);
+                currentTerm->addCourse(classId);
             
                 brooklynCollege.enrollStudent(emplId, classId, grade);
                 brooklynCollege.assignInstructor(instructorId, classId);
             }
         }
-        in_stream.close();
+        inStream.close();
     }
 
     return brooklynCollege;

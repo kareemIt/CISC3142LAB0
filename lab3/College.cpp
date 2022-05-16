@@ -1,5 +1,6 @@
 #include "College.h"
 
+//getters for Students
 student* college::getStudent(string emplId) {
         return students[emplId]; 
 }
@@ -7,7 +8,7 @@ unordered_map<string, student*>* college::getStudents() {
     return &students;
 }
 
-
+//getters for Instructor
 instructor* college::getInstructor(string instructorId) {
     return instructors[instructorId]; 
 }
@@ -15,7 +16,7 @@ unordered_map<string, instructor*>* college::getInstructors() {
     return &instructors;
 }
 
-
+//getters for Section
 section* college::getSection(string classId) {
     return courses[classId];
 }
@@ -23,7 +24,7 @@ unordered_map<string, section*>* college::getCourses() {
     return &courses;
 }
 
-
+//getters for Term
 term* college::getTerm(string termId) {
     return terms[termId];
 }
