@@ -1,4 +1,5 @@
-Instructor, Students taking instructor, Total Students, Percentage of students withdrawalI01: 71,265,0.267925
+Instructor, Students taking instructor, Total Students, Percentage of students withdrawal 
+I01: 71,265,0.267925
 I02: 26,150,0.173333
 I03: 1,40,0.025
 I04: 25,88,0.284091

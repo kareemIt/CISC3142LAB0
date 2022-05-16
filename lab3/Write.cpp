@@ -8,7 +8,7 @@
 void printWithdrawRateInstructor(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateInstructor.txt");
-    file << "Instructor, Students taking instructor, Total Students, Percentage of students withdrawal";
+    file << "Instructor, Students taking instructor, Total Students, Percentage of students withdrawal \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
@@ -20,7 +20,7 @@ void printWithdrawRateInstructor(map<string,vector<double>>* m){
 void printWithdrawRateCourse(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateCourse.txt");
-    file << "Course, Students taking course, Total Students, Percentage of students withdrawal";
+    file << "Course, Students taking course, Total Students, Percentage of students withdrawal \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
@@ -32,7 +32,7 @@ void printWithdrawRateCourse(map<string,vector<double>>* m){
 void printWithdrawRateTerm(map<string,vector<double>>* m){
     ofstream file;
     file.open("withdrawRateTerm.txt");
-    file << "Term, Students taking course, Total Students, Percentage of students withdrawal";
+    file << "Term, Students taking course, Total Students, Percentage of students withdrawal \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
@@ -44,7 +44,7 @@ void printWithdrawRateTerm(map<string,vector<double>>* m){
 void printPassRateInstructor(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateInstructor.txt");
-    file << "Instructor, Students taking instructor, Total Students, Percentage of students pass";
+    file << "Instructor, Students taking instructor, Total Students, Percentage of students pass \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
@@ -55,7 +55,7 @@ void printPassRateInstructor(map<string,vector<double>>* m){
 void printPassRateCourse(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateCourse.txt");
-    file << "Course, Students taking course, Total Students, Percentage of students pass";
+    file << "Course, Students taking course, Total Students, Percentage of students pass \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
@@ -66,7 +66,7 @@ void printPassRateCourse(map<string,vector<double>>* m){
 void printPassRateTerm(map<string,vector<double>>* m){
     ofstream file;
     file.open("passRateTerm.txt");
-    file << "Term, Students taking course, Total Students, Percentage of students pass";
+    file << "Term, Students taking course, Total Students, Percentage of students pass \n";
      for(const auto& t:*m){
         file << t.first << ": "<< t.second[0] << "," << t.second[1] << "," <<  t.second[2] << endl;
     }
