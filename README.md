@@ -4,7 +4,7 @@
 ### Build instructions
 1.Clone the repository 
 
-git clone https://github.com/kareemIt/CISC3142LAB0
+git clone --recurse-submodules https://github.com/kareemIt/CISC3142LAB0
 
 2.Then we can move into the repository
 
